@@ -5,7 +5,8 @@ This package provides a drop-in replacement for the
 but allows for the use of S3-like storage backends via environment variable
 configurations.
 
-The work here is based in part on [this github action](https://github.com/tespkg/actions-cache).
+The work here is based in part on
+[this github action](https://github.com/tespkg/actions-cache).
 
 ## Usage
 
