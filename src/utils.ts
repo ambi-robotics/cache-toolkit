@@ -19,6 +19,15 @@ export interface CacheEntry {
   key: string
 }
 
+/**
+ * isFeatureAvailable to check the presence of Actions cache service
+ *
+ * @returns boolean return true if Actions cache service feature is available, otherwise false
+ */
+export function isFeatureAvailable(): boolean {
+  return true
+}
+
 export async function findObject(
   mc: minio.Client,
   bucket: string,
