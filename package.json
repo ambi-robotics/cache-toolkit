@@ -26,6 +26,9 @@
   "engines": {
     "node": ">=20"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "bundle": "npm run format:write && npm run package",
     "ci-test": "npx jest",
