@@ -2,8 +2,8 @@
 
 This package provides a drop-in replacement for the
 [Github Actions cache toolkit functions](https://github.com/actions/toolkit/blob/main/packages/cache/README.md),
-but allows for the use of S3-like storage backends via environment variable
-configurations.
+but allows for the use of S3-like storage backends (e.g. Minio) via environment
+variable configurations.
 
 The work here is based in part on
 [this github action](https://github.com/tespkg/actions-cache).
