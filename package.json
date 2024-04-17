@@ -20,12 +20,6 @@
     "cache"
   ],
   "license": "MIT",
-  "exports": {
-    ".": "./dist/index.js"
-  },
-  "engines": {
-    "node": ">=20"
-  },
   "publishConfig": {
     "access": "public"
   },
