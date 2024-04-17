@@ -71,4 +71,4 @@ can set environment variables for the main parameters.
 - `secretKey`: `ALT_GHA_CACHE_SECRET_KEY` or `AWS_SECRET_ACCESS_KEY`
 - `sessionToken`: `ALT_GHA_CACHE_SESSION_TOKEN` or `AWS_SESSION_TOKEN`
 - `region`: `ALT_GHA_CACHE_REGION` or `AWS_REGION`
-- `useSSL`: `ALT_GHA_CACHE_USE_SSL
+- `useSSL`: `ALT_GHA_CACHE_USE_SSL`
