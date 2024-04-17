@@ -78,15 +78,31 @@ export async function listObjects(
 
 export function getClient(options: ObjectStoreOptions): minio.Client {
   return new minio.Client({
-    endPoint: options.endPoint ?? process.env['ALT_GHA_CACHE_ENDPOINT'] ?? 's3.amazon.aws',
+    endPoint:
+      options.endPoint ??
+      process.env['ALT_GHA_CACHE_ENDPOINT'] ??
+      's3.amazon.aws',
     port: options.port ?? Number(process.env['ALT_GHA_CACHE_PORT']) ?? 9000,
     accessKey:
-      options.accessKey ?? process.env['ALT_GHA_CACHE_ACCESS_KEY'] ?? process.env['AWS_ACCESS_KEY_ID'] ?? '',
+      options.accessKey ??
+      process.env['ALT_GHA_CACHE_ACCESS_KEY'] ??
+      process.env['AWS_ACCESS_KEY_ID'] ??
+      '',
     secretKey:
-      options.secretKey ?? process.env['ALT_GHA_CACHE_SECRET_KEY'] ?? process.env['AWS_SECRET_ACCESS_KEY'] ?? '',
+      options.secretKey ??
+      process.env['ALT_GHA_CACHE_SECRET_KEY'] ??
+      process.env['AWS_SECRET_ACCESS_KEY'] ??
+      '',
     sessionToken:
-      options.sessionToken ?? process.env['ALT_GHA_CACHE_SESSION_TOKEN'] ?? process.env['AWS_SESSION_TOKEN'] ?? '',
-    region: options.region ?? process.env['ALT_GHA_CACHE_REGION'] ?? process.env['AWS_REGION'] ?? '',
+      options.sessionToken ??
+      process.env['ALT_GHA_CACHE_SESSION_TOKEN'] ??
+      process.env['AWS_SESSION_TOKEN'] ??
+      '',
+    region:
+      options.region ??
+      process.env['ALT_GHA_CACHE_REGION'] ??
+      process.env['AWS_REGION'] ??
+      '',
     useSSL: options.useSSL ?? yn(process.env['ALT_GHA_CACHE_USE_SSL']) ?? true
   })
 }
