@@ -6,13 +6,13 @@
   "version": "0.0.1",
   "author": "Matthew Matl <matt@ambirobotics.com>",
   "private": false,
-  "homepage": "https://github.com/ambi-robotics/cache",
+  "homepage": "https://github.com/ambi-robotics/cache-toolkit",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ambi-robotics/cache.git"
+    "url": "git+https://github.com/ambi-robotics/cache-toolkit.git"
   },
   "bugs": {
-    "url": "https://github.com/ambi-robotics/cache/issues"
+    "url": "https://github.com/ambi-robotics/cache-toolkit/issues"
   },
   "keywords": [
     "github",
