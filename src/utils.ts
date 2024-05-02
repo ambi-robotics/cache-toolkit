@@ -1,6 +1,8 @@
 import { CompressionMethod } from '@actions/cache/lib/internal/constants'
 import * as utils from '@actions/cache/lib/internal/cacheUtils'
 import * as minio from 'minio'
+import * as http from 'http'
+import * as https from 'https'
 import yn from 'yn'
 
 export interface ObjectStoreOptions {
@@ -86,6 +88,14 @@ export async function listObjects(
 }
 
 export function getClient(options: ObjectStoreOptions): minio.Client {
+  let useSSL = options.useSSL ?? yn(process.env['ALT_GHA_CACHE_USE_SSL']) ?? true
+  let httpsTransportAgent = new https.Agent({
+    timeout: 120000,
+  })
+  let httpTransportAgent = new http.Agent({
+    timeout: 120000,
+  })
+  let transportAgent = useSSL ? httpsTransportAgent : httpTransportAgent
   return new minio.Client({
     endPoint:
       options.endPoint ??
@@ -112,7 +122,8 @@ export function getClient(options: ObjectStoreOptions): minio.Client {
       process.env['ALT_GHA_CACHE_REGION'] ??
       process.env['AWS_REGION'] ??
       '',
-    useSSL: options.useSSL ?? yn(process.env['ALT_GHA_CACHE_USE_SSL']) ?? true
+    useSSL: useSSL,
+    transportAgent: transportAgent
   })
 }
 

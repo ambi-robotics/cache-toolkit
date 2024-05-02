@@ -6,11 +6,11 @@ import { UploadOptions } from '@actions/cache/lib/options'
 
 import {
   ObjectStoreOptions,
-  getClient,
-  getBucket,
-  checkPaths,
+  ValidationError,
   checkKey,
-  ValidationError
+  checkPaths,
+  getBucket,
+  getClient,
 } from './utils'
 
 /**
