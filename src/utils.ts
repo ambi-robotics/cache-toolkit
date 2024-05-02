@@ -88,14 +88,15 @@ export async function listObjects(
 }
 
 export function getClient(options: ObjectStoreOptions): minio.Client {
-  let useSSL = options.useSSL ?? yn(process.env['ALT_GHA_CACHE_USE_SSL']) ?? true
-  let httpsTransportAgent = new https.Agent({
-    timeout: 120000,
+  const useSSL =
+    options.useSSL ?? yn(process.env['ALT_GHA_CACHE_USE_SSL']) ?? true
+  const httpsTransportAgent = new https.Agent({
+    timeout: 120000
   })
-  let httpTransportAgent = new http.Agent({
-    timeout: 120000,
+  const httpTransportAgent = new http.Agent({
+    timeout: 120000
   })
-  let transportAgent = useSSL ? httpsTransportAgent : httpTransportAgent
+  const transportAgent = useSSL ? httpsTransportAgent : httpTransportAgent
   return new minio.Client({
     endPoint:
       options.endPoint ??
@@ -122,8 +123,8 @@ export function getClient(options: ObjectStoreOptions): minio.Client {
       process.env['ALT_GHA_CACHE_REGION'] ??
       process.env['AWS_REGION'] ??
       '',
-    useSSL: useSSL,
-    transportAgent: transportAgent
+    useSSL,
+    transportAgent
   })
 }
 

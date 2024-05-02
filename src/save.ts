@@ -10,7 +10,7 @@ import {
   checkKey,
   checkPaths,
   getBucket,
-  getClient,
+  getClient
 } from './utils'
 
 /**
